@@ -64,5 +64,18 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+
+  var plannerArray = JSON.parse(localStorage.getItem("Planner"));
+
+  for (var i = 0; i < timeBlocks.length; i++) {
+    let matchingObject = plannerArray.find(
+      (obj) => obj.hour === $(timeBlocks[i]).attr("id")
+    );
+
+    if (matchingObject) {
+      $(timeBlocks[i]).children("textarea").val(matchingObject.description);
+    }
+  }
+
   // TODO: Add code to display the current date in the header of the page.
 });

@@ -31,7 +31,7 @@ $(function () {
 
   // Add code to apply the past, present, or future class to each time //
 
-  var currentHour = 13;
+  var currentHour = dayjs().hour();
 
   var timeBlocks = $(".time-block");
 
